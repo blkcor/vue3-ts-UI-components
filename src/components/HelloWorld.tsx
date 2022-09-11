@@ -1,33 +1,25 @@
-import { defineComponent, onMounted, PropType, reactive, ref, watchEffect } from 'vue';
-
+import { defineComponent } from 'vue';
 
 const PropType = {
-  msg: String,
-  /* age: {
+  msg:String,
+  age:{
     type:Number,
-    required:false
-  } */
+    required:true
+  }
 } as const
-
 
 export default defineComponent({
   name:'HelloWorld',
   props:PropType,
   setup(props){
-    const state = reactive({
-      age:20
-    })
-    let name = ref('blkcor')
-      return(
+      return ()=>
         <div>
-            <h3>{props.msg}</h3>
-            <h3>{name}</h3>
-            <h2>{ state.age }</h2>
+            <p>{props.msg}</p>
+            <h1>{props.age}</h1>
         </div>
-      )
   }
 })
 
-
-
 export {}
+
+// `java ts js go python solidy rust ruby and so on vue react`
